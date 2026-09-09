@@ -1,9 +1,0 @@
-country_code,country_name,total_orders,total_quantity,total_revenue_gbp,total_revenue_eur
-DE,Germany,40,110,4014.7,4616.91
-FR,France,56,130,3979.2,4576.08
-BE,Belgium,30,81,2682.3,3084.64
-ES,Spain,28,64,1992.23,2291.07
-PT,,20,60,1985.03,2282.78
-IE,Ireland,19,46,1854.43,2132.6
-IT,Italy,28,57,1781.22,2048.4
-NL,,19,55,1769.83,2035.3
