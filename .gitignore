@@ -1,0 +1,23 @@
+# Environnements Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / configuration locale
+.env
+
+# Fichiers générés par le pipeline (reproductibles via pipeline.py)
+bookworld_final.db
+sales_by_country.csv
+
+# Fichiers temporaires de génération de rapport / conversion
+*.pdf
+page-*.jpg
+
+# Divers OS / éditeurs
+.DS_Store
+.vscode/
+
+# Archives
+*.tar.gz

@@ -27,10 +27,10 @@ consultation.
 | `bookworld_reference.db`        | Base de référence source (canaux, pays, règles de catégories). |
 | `requirements.txt`              | Dépendances Python du projet. |
 | `.env.example`                  | Exemple de configuration du token d'API (`API_TOKEN`). |
-| `docs/rapport_final.docx`       | Rapport final : méthodologie, agrégation, schéma de données, justification RGPD, documentation des endpoints. |
-| `docs/schema_final.png`         | Schéma entité-relation de la base finale. |
-| `docs/rgpd_comparaison.png`     | Comparaison des colonnes source vs base finale (preuve RGPD). |
-| `docs/sales_by_country_sample.csv` | Exemple de sortie de l'agrégation `sales_by_country`. |
+| `rapport_final.docx`       | Rapport final : méthodologie, agrégation, schéma de données, justification RGPD, documentation des endpoints. |
+| `schema_final.png`         | Schéma entité-relation de la base finale. |
+| `rgpd_comparaison.png`     | Comparaison des colonnes source vs base finale (preuve RGPD). |
+| `sales_by_country_sample.csv` | Exemple de sortie de l'agrégation `sales_by_country`. |
 | `bookworld_final.db` *(généré)* | Base finale SQLite, produite par `pipeline.py` — non versionnée (voir `.gitignore`), à régénérer localement. |
 
 ## 1. Installer les dépendances
@@ -106,7 +106,7 @@ curl -H "X-API-Key: mon-token-secret" \
 ```
 
 La documentation détaillée des endpoints (codes de retour, exemples de
-réponses) est dans `docs/rapport_final.docx`, section 7.
+réponses) est dans `rapport_final.docx`, section 7.
 
 ## 4. Authentification
 
@@ -168,11 +168,11 @@ du projet (ventes agrégées par pays / livre / canal) et sont exclues dès le
 schéma (`schema_final.sql`) et via une whitelist explicite de colonnes dans
 `pipeline.py`. La justification complète (principe de minimisation, article
 5.1.c du RGPD) et la preuve technique sont détaillées dans
-`docs/rapport_final.docx`, section 5.
+`rapport_final.docx`, section 5.
 
 ## Documentation complète
 
-Le rapport `docs/rapport_final.docx` détaille l'ensemble du projet :
+Le rapport `rapport_final.docx` détaille l'ensemble du projet :
 sources de données, nettoyage/enrichissement, agrégation `sales_by_country`,
 schéma de la base finale, conformité RGPD, limites connues des données, et
 documentation de l'API REST.
