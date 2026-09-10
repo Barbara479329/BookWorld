@@ -23,13 +23,12 @@ consultation.
 | `api.py`                        | API REST (Flask) exposant les données de `bookworld_final.db`, protégée par un token. |
 | `queries.sql`                   | Requêtes SQL d'extraction depuis `bookworld_reference.db` (requête filtrée + requête d'enrichissement). |
 | `schema_final.sql`              | DDL de la base finale (`bookworld_final.db`) : tables, colonnes, relations. Ne déclare aucune colonne personnelle (voir [RGPD](#rgpd)). |
-| `sales_raw.csv`                 | Données brutes de ventes (source d'entrée du pipeline). |
-| `bookworld_reference.db`        | Base de référence source (canaux, pays, règles de catégories). |
+| `data/sales_raw.csv`            | Données brutes de ventes (source d'entrée du pipeline). |
+| `data/bookworld_reference.db`   | Base de référence source (canaux, pays, règles de catégories). |
 | `requirements.txt`              | Dépendances Python du projet. |
 | `.env.example`                  | Exemple de configuration du token d'API (`API_TOKEN`). |
 | `rapport_final.docx`       | Rapport final : méthodologie, agrégation, schéma de données, justification RGPD, documentation des endpoints. |
 | `schema_final.png`         | Schéma entité-relation de la base finale. |
-| `rgpd_comparaison.png`     | Comparaison des colonnes source vs base finale (preuve RGPD). |
 | `sales_by_country_sample.csv` | Exemple de sortie de l'agrégation `sales_by_country`. |
 | `bookworld_final.db` *(généré)* | Base finale SQLite, produite par `pipeline.py` — non versionnée (voir `.gitignore`), à régénérer localement. |
 
@@ -49,8 +48,8 @@ pip install -r requirements.txt
 
 ## 2. Exécuter le pipeline
 
-Le pipeline lit `sales_raw.csv` et `bookworld_reference.db` (déjà présents
-dans le dépôt), scrape la première page de
+Le pipeline lit `data/sales_raw.csv` et `data/bookworld_reference.db` (déjà
+présents dans le dépôt), scrape la première page de
 [books.toscrape.com](https://books.toscrape.com/) et interroge l'API
 publique [Frankfurter](https://www.frankfurter.app/) pour le taux de
 change GBP → EUR. Il produit ensuite `sales_by_country.csv` et la base
